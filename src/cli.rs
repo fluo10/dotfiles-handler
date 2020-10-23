@@ -34,7 +34,10 @@ pub struct Pull {
 pub struct Add {
   #[clap(short, long, parse(from_occurrences), about = "Set the level of verbosity",)]
   pub verbose: i32,
-  input: String,
+  #[clap(about = "Path of original file",)]
+  remote: String,
+  #[clap(about = "Path of copy file in this repository",)]
+  local: String,
 }
 #[derive(Clap)]
 pub struct Remove {
